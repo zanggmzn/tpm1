@@ -9,39 +9,47 @@ class Menu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: const Text('Menu Utama Maths'),
-          centerTitle: true,
-          backgroundColor: Colors.black,
+      appBar: AppBar(
+        title: const Text('Menu Utama Maths'),
+        backgroundColor: Colors.black,
+      ),
+      body: Container(
+        //infinity mengikuti ukuran layar
+        width: MediaQuery.of(context).size.width,
+        padding: const EdgeInsets.fromLTRB(50, 150, 50, 280),
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [
+              Color.fromARGB(255, 192, 93, 120),
+              Color.fromARGB(255, 115, 92, 158)
+            ],
+          ),
         ),
-        body: Container(
-            padding: EdgeInsets.all(120), //biar ga ketutupan card
-            //infinity mengikuti ukuran layar
-            width: double.infinity,
-            height: double.infinity,
-            decoration: const BoxDecoration(
-                gradient: LinearGradient(
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                    colors: [
-                  Color.fromARGB(255, 192, 93, 120),
-                  Color.fromARGB(255, 115, 92, 158)
-                ])),
-            child: Card(
-              child: Column(children: [
-                Container(
-                  padding: EdgeInsets.all(10),
-                  child: Column(children: [
+        child: Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(20),
+            color: Colors.white,
+          ),
+          child: Column(
+            children: [
+              Container(
+                padding: const EdgeInsets.all(10),
+                child: Column(
+                  children: [
                     const SizedBox(
                       height: 30,
                     ),
-                    const Text('Selamat Datang Math!',
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                        )),
+                    const Text(
+                      'Selamat Datang Math!',
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
                     const SizedBox(
-                      height: 50,
+                      height: 30,
                     ),
                     const Text('Silahkan Pilih Menu Dibawah',
                         style: TextStyle(
@@ -54,42 +62,45 @@ class Menu extends StatelessWidget {
                     ElevatedButton(
                       //kondisi saat klik button login
                       onPressed: () {
-                        Navigator.pushReplacement(
+                        Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => Data(),
+                              builder: (context) => const Data(),
                             ));
                       },
-                      child: Text('Data Diri Kelompok'),
                       style: ElevatedButton.styleFrom(
                           //padding: EdgeInsets.all(80),
-                          minimumSize: Size(300, 40),
-                          primary: Color.fromARGB(255, 0, 0, 0)),
+                          minimumSize: const Size(300, 40),
+                          primary: const Color.fromARGB(255, 0, 0, 0)),
+                      child: const Text('Data Diri Kelompok'),
                     ),
                     const SizedBox(
-                      height: 30,
+                      height: 10,
                     ),
                     ElevatedButton(
                       //kondisi saat klik button login
                       onPressed: () {
-                        Navigator.pushReplacement(
+                        Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => Kalku(),
+                              builder: (context) => const Kalku(),
                             ));
                       },
-                      child: Text('Kalkulator Sederhana'),
                       style: ElevatedButton.styleFrom(
-                          //padding: EdgeInsets.all(20),
                           minimumSize: Size(300, 40),
-                          primary: Color.fromARGB(255, 0, 0, 0)),
+                          primary: const Color.fromARGB(255, 0, 0, 0)),
+                      child: const Text('Kalkulator Sederhana'),
                     ),
                     const SizedBox(
                       height: 60,
                     ),
-                  ]),
-                )
-              ]),
-            )));
+                  ],
+                ),
+              )
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }

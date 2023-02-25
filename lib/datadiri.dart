@@ -5,41 +5,171 @@ class Data extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 207, 187, 187),
+      backgroundColor: const Color.fromARGB(255, 207, 187, 187),
       appBar: AppBar(
         backgroundColor: Colors.black,
-        title: Center(
-          child: Text(
-            "DATA KELOMPOK",
-            style: new TextStyle(color: Colors.white),
-          ),
+        title: const Text(
+          "DATA KELOMPOK",
+          style: TextStyle(color: Colors.white),
         ),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(200),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      body: Container(
+        padding: const EdgeInsets.only(top: 20),
+        alignment: Alignment.center,
+        child: Column(
           children: [
-            Image.asset(
-              "images/math.png",
-              width: 60,
-              height: 60,
+            Card(
+              elevation: 10,
+              child: Container(
+                height: 230,
+                width: 350,
+                padding: const EdgeInsets.all(12),
+                child: Row(
+                  children: [
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(20),
+                      child: SizedBox(
+                        height: MediaQuery.of(context).size.height,
+                        width: 130,
+                        child: Image.asset(
+                          'images/math.png',
+                          fit: BoxFit.cover,
+                          errorBuilder: (context, error, stackTrace) {
+                            return const Icon(
+                              Icons.person,
+                              size: 90,
+                            );
+                          },
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 20,
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: const [
+                        Text(
+                          'Syifa Putri Azzahra',
+                          style: TextStyle(fontSize: 20),
+                          maxLines: 1,
+                        ),
+                        SizedBox(
+                          height: 12,
+                        ),
+                        Text(
+                          '123200135',
+                          style: TextStyle(fontSize: 20),
+                          maxLines: 1,
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
             ),
-            const SizedBox(
-              height: 30,
+            Card(
+              elevation: 10,
+              child: Container(
+                height: 230,
+                width: 350,
+                padding: const EdgeInsets.all(12),
+                child: Row(
+                  children: [
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(20),
+                      child: SizedBox(
+                        height: MediaQuery.of(context).size.height,
+                        width: 130,
+                        child: Image.asset(
+                          'images/math.png',
+                          fit: BoxFit.cover,
+                          errorBuilder: (context, error, stackTrace) {
+                            return const Icon(
+                              Icons.person,
+                              size: 90,
+                            );
+                          },
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 20,
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: const [
+                        Text(
+                          'Radhiya Ahmad Q',
+                          style: TextStyle(fontSize: 20),
+                          maxLines: 1,
+                        ),
+                        SizedBox(
+                          height: 12,
+                        ),
+                        Text(
+                          '123200137',
+                          style: TextStyle(fontSize: 20),
+                          maxLines: 1,
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
             ),
-            Image.asset(
-              "images/math.png",
-              width: 60,
-              height: 60,
-            ),
-            const SizedBox(
-              height: 30,
-            ),
-            Image.asset(
-              "images/math.png",
-              width: 60.0,
-              height: 60.0,
+            Card(
+              elevation: 10,
+              child: Container(
+                height: 230,
+                width: 350,
+                padding: const EdgeInsets.all(12),
+                child: Row(
+                  children: [
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(20),
+                      child: SizedBox(
+                        height: MediaQuery.of(context).size.height,
+                        width: 130,
+                        child: Image.asset(
+                          'images/math.png',
+                          fit: BoxFit.cover,
+                          errorBuilder: (context, error, stackTrace) {
+                            return const Icon(
+                              Icons.person,
+                              size: 90,
+                            );
+                          },
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 20,
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: const [
+                        Text(
+                          'Maulida Maizani A',
+                          style: TextStyle(fontSize: 20),
+                          maxLines: 1,
+                        ),
+                        SizedBox(
+                          height: 12,
+                        ),
+                        Text(
+                          '123200152',
+                          style: TextStyle(fontSize: 20),
+                          maxLines: 1,
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
             ),
           ],
         ),
